@@ -9,9 +9,14 @@ public class PageBase extends BaseTest {
 
     private WebDriverWait wait;
 
-    public void waitForElement(WebElement el){
+    public void waitForElement(WebElement el) {
         wait = new WebDriverWait(GetDriver(), 20);
-        wait.until(ExpectedConditions.elementToBeClickable(el));
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(el));
+
+        }catch (Exception e){
+
+        }
     }
 
     public void scrollToElement(WebElement el)
@@ -20,5 +25,6 @@ public class PageBase extends BaseTest {
         actions.moveToElement(el);
         actions.perform();
     }
+
 
 }

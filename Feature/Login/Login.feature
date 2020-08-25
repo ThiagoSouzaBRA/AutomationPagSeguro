@@ -1,12 +1,14 @@
 #language: pt
 
   @Login
-  Funcionalidade: Validar login's
+  Funcionalidade: Validar login
 
-    @PRD @Invalido
-    Cenario: CT01_ValidarLogin_Invalido
+    @PRD @Sucesso
+    Cenario: CT01_ValidarLogin_Sucesso
       Dado que eu acesse a pagina inicial "https://pagseguro.uol.com.br/"
       Quando clicar na aba "Acessar minha conta"
       E clicar na aba "Entrar"
-      E clicar no botao entrar
-      Entao devera apresentar a mensagem "Preencha o campo de usuário / Preencha sua senha"
+      E inserir cpf com "00000000030"
+      E inserir senha com "teste123"
+      E clicar no botao de login
+      Entao devera apresentar a mensagem de erro "Usuário inválido"

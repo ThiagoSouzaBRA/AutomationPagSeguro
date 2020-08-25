@@ -2,6 +2,7 @@ package Pages;
 
 import Utils.PageBase;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -36,6 +37,10 @@ public class LoginPage extends PageBase {
     @CacheLookup
     WebElement btnEntrar;
 
+    @FindBy(xpath = "//div[@id='alertLogin']//strong[text()='Usuário inválido']")
+    @CacheLookup
+    WebElement labelMsgLogin_Invalido;
+
     public LoginPage(WebDriver driver)
     {
         localdriver = driver;
@@ -43,16 +48,11 @@ public class LoginPage extends PageBase {
     }
 
     public void inputCPF(String cpf){
-        checkPage();
-        waitForElement(labelInputCPF);
-        labelInputCPF.click();
         waitForElement(inputCPF);
         inputCPF.sendKeys(cpf);
     }
 
     public void inputSenha(String senha){
-        waitForElement(labelInputSenha);
-        labelInputSenha.click();
         waitForElement(inputSenha);
         inputSenha.sendKeys(senha);
     }
@@ -66,10 +66,9 @@ public class LoginPage extends PageBase {
         btnEntrar.click();
     }
 
-    public boolean checkAviso(String msg){
-        WebElement el = GetDriver().findElement(By.xpath("//div[@id='alertLogin']//strong[text()='" + msg + "']"));
-        waitForElement(el);
-        return el.isDisplayed();
+    public boolean checkMensagemErro(String mensagem){
+        waitForElement(labelMsgLogin_Invalido);
+        return labelMsgLogin_Invalido.isDisplayed();
     }
 
 }

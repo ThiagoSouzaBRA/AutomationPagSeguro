@@ -9,8 +9,8 @@ import org.junit.Assert;
 
 public class ConsultasMaquininhasSteps extends BaseTest{
 
-    public HomePage homepage =  new HomePage(GetDriver());
-    public ModerninhaPage moderninhapage =  new ModerninhaPage(GetDriver());
+    private HomePage homepage =  new HomePage(GetDriver());
+    private ModerninhaPage moderninhapage =  new ModerninhaPage(GetDriver());
 
     @Dado("clicar na aba {string}")
     public void clicar_na_aba(String titulo) {

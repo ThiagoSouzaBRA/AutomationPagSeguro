@@ -10,7 +10,7 @@
       Entao devera ser exibida a mensagem "Veja quanto você recebe a cada venda (à vista e parcelada)"
 
     @PRD @Debito @VendasComMaquininha @Sucesso
-    Cenario: CT01_ValidarValorNaHora_Debito_Sucesso
+    Cenario: CT01_ValidarSaldoNaHora_Debito_Sucesso
       Dado que seja selecionado a opcao "Vendas com maquininha"
       E que eu insira o valor "10000"
       Quando selecionar a forma de pagamento "Débito"
@@ -25,14 +25,14 @@
       Entao devera ser apresentado o valor "95,01" na hora
 
     @PRD @2Parcelas @VendasComMaquininha @Sucesso
-    Cenario: CT02_ValidarValorNaHora_2Parcelas_Sucesso
+    Cenario: CT03_ValidarValorNaHora_2Parcelas_Sucesso
       Dado que seja selecionado a opcao "Vendas com maquininha"
       E que eu insira o valor "10000"
       Quando selecionar a forma de pagamento "2 parcelas"
       Entao devera ser apresentado o valor "90,09" na hora
 
     @PRD @2Parcelas @VendasComMaquininha @Invalido
-    Cenario: CT02_ValidarValorNaHora_2Parcelas_Invalido
+    Cenario: CT04_ValidarValorNaHora_2Parcelas_Invalido
       Dado que seja selecionado a opcao "Vendas com maquininha"
       E que eu insira o valor "100"
       Entao a forma de pagamento "2 parcelas" nao devera ser exibida

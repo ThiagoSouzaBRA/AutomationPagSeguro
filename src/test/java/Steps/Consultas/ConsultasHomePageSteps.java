@@ -7,7 +7,8 @@ import org.junit.Assert;
 
 public class ConsultasHomePageSteps extends BaseTest {
 
-    public HomePage homepage =  new HomePage(GetDriver());
+    private HomePage homepage =  new HomePage(GetDriver());
+
 
     @Dado("que eu acesse a pagina inicial {string}")
     public void que_eu_acesse_a_pagina_inicial(String url) {
@@ -20,6 +21,8 @@ public class ConsultasHomePageSteps extends BaseTest {
     public void a_logo_do_pag_seguro_devera_ser_exibida() {
         Assert.assertTrue(homepage.checkPage());
     }
+
+
 
 
 }
